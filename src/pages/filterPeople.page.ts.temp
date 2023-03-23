@@ -1,0 +1,14 @@
+import { BasePage } from "./base.page";
+
+export class missingPeoplePage extends BasePage{
+    private searchID: string = "//input[@placeholder='Buscar..']";
+
+    constructor(){
+        super();
+    }
+
+    async searchField(searchText: string){
+        await this.driver.Page.fill(this.searchID, searchText);
+    }
+
+}

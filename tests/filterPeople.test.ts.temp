@@ -1,0 +1,23 @@
+import { driverInstance } from "../src/core/driver";
+import { missingPeoplePage } from "../src/pages/filterPeople.page.ts.temp";
+
+describe('test the missing people filters',() =>{
+    let MissingPeoplePage: missingPeoplePage;
+
+    beforeAll(
+        async () => {
+            await driverInstance.startDriver();
+            MissingPeoplePage = new missingPeoplePage();
+        }
+    );
+
+    afterAll(
+        async () => {
+        //await driverInstance.closeDriver();
+        }
+    );
+
+    it('Go To Page', async () => {
+        await MissingPeoplePage.navigateTo('https://encuentralos.org/');
+    });
+})
